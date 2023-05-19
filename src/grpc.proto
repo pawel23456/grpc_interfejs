@@ -96,6 +96,10 @@ service FileService {
   rpc UpdateFile(UpdateFileRequest) returns (UpdateFileResponse) {}
 }
 
+message test {
+bool test =0;
+}
+
 
 
 
