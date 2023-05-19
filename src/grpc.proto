@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+message ZapiszNaKursRequest {
+  string kursId = 1;
+  string kursantId = 2;
+}
+
+message ZapiszNaKursResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service KursServiceZapisz {
+  rpc ZapiszNaKurs(ZapiszNaKursRequest) returns (ZapiszNaKursResponse);
+}
+
+message UsunZKursuRequest {
+  string kursId = 1;
+  string kursantId = 2;
+}
+
+message UsunZKursuResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service KursServiceUsun {
+  rpc UsunZKursu(UsunZKursuRequest) returns (UsunZKursuResponse);
+}
+
+message Kurs {
+  string id = 1;
+  string nazwa = 2;
+}
+
+message WybierzKursRequest {
+  string kursId = 1;
+}
+
+message WybierzKursResponse {
+  bool success = 1;
+  string message = 2;
+  Kurs kurs = 3;
+}
+
+service KursServiceWyswietl {
+  rpc WybierzKurs(WybierzKursRequest) returns (WybierzKursResponse);
+}
+
+message Kursant {
+  string id = 1;
+  string imie = 2;
+  string nazwisko = 3;
+}
+
+message KursanciNaKursieRequest {
+  string kursId = 1;
+}
+
+message KursanciNaKursieResponse {
+  bool success = 1;
+  string message = 2;
+  repeated Kursant kursanci = 3;
+}
+
+service KursServiceStudenciNaKursie {
+  rpc KursanciNaKursie(KursanciNaKursieRequest) returns (KursanciNaKursieResponse);
+}
+
+
+
+
