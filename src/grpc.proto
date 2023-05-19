@@ -67,6 +67,11 @@ service KursServiceStudenciNaKursie {
   rpc KursanciNaKursie(KursanciNaKursieRequest) returns (KursanciNaKursieResponse);
 }
 
+message test{
+bool taknie = 0;
+string a = "a";
+}
+
 
 
 
