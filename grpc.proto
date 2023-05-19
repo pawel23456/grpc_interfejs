@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message ZapiszNaKursRequest {
+  string kursId = 1;
+  string kursantId = 2;
+}
+
+message ZapiszNaKursResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service KursServiceZapisz {
+  rpc ZapiszNaKurs(ZapiszNaKursRequest) returns (ZapiszNaKursResponse);
+}
+
+message UsunZKursuRequest {
+  string kursId = 1;
+  string kursantId = 2;
+}
+
+message UsunZKursuResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service KursServiceUsun {
+  rpc UsunZKursu(UsunZKursuRequest) returns (UsunZKursuResponse);
+}
+
+
+
+
+
