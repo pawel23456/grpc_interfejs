@@ -69,7 +69,7 @@ service KursServiceStudenciNaKursie {
 
 message test{
 bool taknie = 0;
-string a = "a";
+string a = "b";
 }
 
 
